@@ -1,0 +1,10 @@
+.header-light{
+    height: 100px;
+    background-color: rgb(122, 181, 216);
+}
+
+.header-dark{
+    height: 100px;
+    background-color: rgb(16, 51, 63);
+}
+

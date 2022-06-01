@@ -1,9 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import './Study.css';
 
-function Study(props) {
+function TimePassed(props) {
     const [timePassed, setTimePassed] = useState({
         years: '',
         days: '',
@@ -12,11 +11,11 @@ function Study(props) {
         seconds: ''
     } );
 
-    const {course, entity, initDate, endDate} = props;
+    const {date} = props;
 
     const calculateTimePassed = () => {
         let today = new Date();
-        let difference =  today.getTime() - initDate.getTime();
+        let difference =  today.getTime() - date.getTime();
       
         let timePassed = {};
 
@@ -41,20 +40,19 @@ function Study(props) {
         setTimePassed(timePassed);
     }
 
-    setInterval(() => {
-        calculateTimePassed();
-        console.log(timePassed);
-    }, 1000);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            calculateTimePassed();
+        }, 1000);
+        return () => clearInterval(interval);
+    }, []);
 
 
     return (
-        <div className='study'>
-            <b>{course}</b><br/>
-            {entity} <br/>
-            {initDate.toDateString()} to {endDate.toDateString()} <br/>
+        <>
             ({timePassed.years} years {timePassed.days} days {timePassed.hours} hours {timePassed.minutes} minutes {timePassed.seconds} seconds)
-        </div>
+        </>
     );
 }
 
-export default Study;
+export default TimePassed;

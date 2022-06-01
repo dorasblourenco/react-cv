@@ -7,7 +7,7 @@ function DarkModeButton(props) {
 
     const {darkMode, onChangeMode} = props;
 
-    let classColorBtn = 'dark-button btn btn-sm ' + (darkMode ? 'btn-outline-dark' : 'btn-outline-light');
+    let classColorBtn = 'button ' + (darkMode ? 'button-dark' : 'button-light');
 
     return (
         <button onClick={onChangeMode} className={classColorBtn}> 

@@ -2,10 +2,12 @@ import React, {useState} from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import Header from './components/Header';
+import BarsInfo from './components/BarsInfo';
 import Section from './components/Section';
-import SideInfo from './components/SideInfo';
-import Studies from './components/Studies';
+import SideInfo from './components/SideInfo/SideInfo';
+import Studies from './components/Studies/Studies';
+import Experience from './components/Experience/Experience';
+import Skills from './components/Skills/Skills';
 
 function App() {
 
@@ -37,13 +39,22 @@ my career.</p></div>
       id: Math.random(),
       title: 'Academic Qualifications and Training', 
       body: <Studies/>
+    },
+    {
+      id: Math.random(),
+      title: 'Professional Experience', 
+      body: <Experience/>
+    },
+    {
+      id: Math.random(),
+      title: 'Technical Skills', 
+      body: <Skills darkMode={darkMode}/>
     }
-
   ]
 
   return (
     <>
-      <Header darkMode={darkMode} onChangeMode={() => onChangeModeHandler()} />
+      <BarsInfo darkMode={darkMode} onChangeMode={() => onChangeModeHandler()} header={'Dora Sofia Bernardes Lourenço'} />
       <div className='row background'>
         <div className='col-md-3'>
           <SideInfo darkMode={darkMode}/>
@@ -54,7 +65,7 @@ my career.</p></div>
         })}
         </div>
       </div>
-      <Header darkMode={darkMode} onChangeMode={() => onChangeModeHandler()} />
+      <BarsInfo darkMode={darkMode} onChangeMode={() => onChangeModeHandler()} />
     </>
   );
 }

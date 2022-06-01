@@ -1,0 +1,23 @@
+.header-light{
+    position: relative;
+    height: 100px;
+    background-color: rgb(26, 180, 236);
+}
+
+.header-dark{
+    color: white;
+    position: relative;
+    height: 100px;
+    background-color: rgb(16, 51, 63);
+}
+
+.info-position{
+    padding-top: 25px;
+    /* position: absolute;
+    top: 50%;
+    transform: translateY(-50%); */
+}
+
+.additional-info{
+    padding-right: 30px;
+}

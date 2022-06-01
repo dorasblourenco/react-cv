@@ -1,0 +1,17 @@
+.skill-name{
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.skill{
+    margin-bottom: 15px;
+}
+
+.progress-light{
+    background-color: rgb(26, 180, 236);
+}
+
+.progress-dark{
+    background-color: yellow;
+}

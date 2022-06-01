@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 // import './Section.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
-import DarkModeButton from './DarkModeButton';
+import DarkModeButton from '../DarkModeButton';
 import Study from './Study';
 
 function Studies(props) {
@@ -31,7 +31,7 @@ function Studies(props) {
             initDate: new Date('2014-09-01'),
             endDate: new Date('2020-12-01')
         }
-    ]
+    ];
     
     return (
         <div>
